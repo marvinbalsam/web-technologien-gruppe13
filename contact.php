@@ -15,16 +15,16 @@ include 'navigation.php';
     </header>
     <div class="container">
         <form action="submit_form.php" method="post">
-            <label for="name">Name:</label>
+            <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required>
             <br>
 
-            <label for="email">E-Mail:</label>
+            <label for="email">E-Mail:</label><br>
             <input type="email" id="email" name="email" required>
             <br>
-            <label for="message">Nachricht:</label>
+            <label for="message">Nachricht:</label><br>
             <textarea id="message" name="message" rows="5" required></textarea>
-            <br>
+            <br><br>
             <input type="submit" value="Absenden">
         </form>
     </div>

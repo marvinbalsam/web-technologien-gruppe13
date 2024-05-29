@@ -12,7 +12,14 @@ include 'dbconnect.php';
 <body>
 
 <h1>Webshop</h1>
-<h2>Hier finden Sie unsere Produkte</h2>
+
+<form>
+  <label for="username">Benutzername:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="password">Passwort:</label><br>
+  <input type="password" id="password" name="password"><br><br>
+  <input type="submit" value="Login">
+</form>
 
 
 </body>
