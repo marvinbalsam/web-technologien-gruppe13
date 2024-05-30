@@ -13,13 +13,21 @@ include 'dbconnect.php';
 
 <h1>Webshop</h1>
 
-<form>
-  <label for="username">Benutzername:</label><br>
-  <input type="text" id="username" name="username"><br>
-  <label for="password">Passwort:</label><br>
-  <input type="password" id="password" name="password"><br><br>
-  <input type="submit" value="Login">
-</form>
+<div>
+        <form action="loginsubmit.php" onsubmit = "return validation()" method = "POST">
+            <div>
+            <label>Mail</label><br>
+            <input type="text" name="mail" required="mail" />
+                
+            </div>
+            <div>
+            <label>Password</label><br>
+            <input type="password" name="password" required="password" /><br><br>
+            </div>
+            <div>
+                <input type =  "submit" id = "button" value = "Login" />
+        </form>
+    </div>
 
 
 </body>
