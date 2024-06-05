@@ -32,6 +32,7 @@ CREATE TABLE `products` (
   `name` char(255) NOT NULL,
   `description` char(255) NOT NULL,
   `price` double NOT NULL
+  `image` BLOB NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -39,6 +40,12 @@ CREATE TABLE `products` (
 --
 -- Tabellenstruktur für Tabelle `user`
 --
+
+INSERT INTO `products`(`product_id`, `name`, `description`, `price`, `image`) VALUES
+(1, `1`, `test1`, `Das erste Produkt`, `3,99`, `/Images/test1.jpg`),
+(2, `2`, `test2`, `Das zweite Produkt`, `5`, ``),
+(3, `3`, `test3`, ``, ``, ``),
+(4, `4`, `test4`, ``, ``, ``);
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
