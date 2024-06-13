@@ -2,6 +2,14 @@
 include 'navigation.php';
 include 'dbconnect.php';
 
+$username = "root";
+$password = "";
+$dsn = "mysql:host=127.0.0.1;dbname=db_webshop;charset=utf8";
+$db = new PDO($dsn, $username, $password);
+
+$sql = "SELECT product_id, name, description, price, image FROM products";
+$result = $db->query($sql);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,23 +27,15 @@ include 'dbconnect.php';
     <h1>Webshop</h1>
     <h2>Hier finden Sie unsere Produkte</h2>
 
-
     <div>
         </header>
         <section class="container" id="products">
             <div class="row">
+                <?php while($row = $result->fetch()):?> 
                 <div class="col">
-                    <?php include 'card.php' ?>
+                  <?php include 'card.php'?>
                 </div>
-                <div class="col">
-                    <?php include 'card.php' ?>
-                </div>
-                <div class="col">
-                    <?php include 'card.php' ?>
-                </div>
-                <div class="col">
-                    <?php include 'card.php' ?>
-                </div>
+                <?php endwhile;?>
             </div>
     </div>
 
