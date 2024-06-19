@@ -32,6 +32,10 @@ body {
     color: black;
   }
 
+  #cart {
+    float: right;
+  }
+
   .zentriert {
     width: 50%;
     margin: 0 auto; 
