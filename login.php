@@ -1,6 +1,7 @@
 <?php
 include 'navigation.php';
 include 'dbconnect.php';
+require 'session.php';
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,17 +1,14 @@
 <?php
 include 'navigation.php';
 include 'dbconnect.php';
+require 'session.php';
 
 $sql1 = "SELECT product_id, name, description, price, image FROM products";
 $result = mysqli_query($link, $sql1);
 
-$userId = 123;
-$cartItemsCount = 0;
-
-
-$sql2 = "SELECT COUNT(product_id) FROM cart WHERE user_id = ".$userId;
-$cartResult = mysqli_query($link, $sql2);
-$cartItemsCount = mysqli_fetch_column($cartResult);
+//$sql2 = "SELECT COUNT(product_id) FROM cart WHERE user_id = $loggedInUser";
+//$cartResult = mysqli_query($link, $sql2);
+//$cartItemsCount = mysqli_fetch_column($cartResult);
 
 
 ?>
@@ -30,6 +27,12 @@ $cartItemsCount = mysqli_fetch_column($cartResult);
     <div class ="container">
     <h1>Webshop</h1>
     <h2>Hier finden Sie unsere Produkte</h2>
+
+    <a class="btn btn-primary btn-lg" id="add_product" href="product_add.php">Produkt hinzufügen</a>
+
+    <a class="btn btn-primary btn-lg" id="my_products" href="userProducts.php">Meine Produkte</a>
+
+   
 
     <div>
         </header>

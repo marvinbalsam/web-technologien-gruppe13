@@ -13,8 +13,13 @@ $password = $_POST['password'];
         $result = mysqli_query($link, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
+
+       
+        
           
         if($count == 1){  
+            session_start();
+            $_SESSION['username'] = $row['user_id'];
             echo "<h1><center> Login erfolgreich. Sie werden auf das Dashboard weitergeleitet</center></h1>";
             sleep(5);
             header("Location: ./products.php");
