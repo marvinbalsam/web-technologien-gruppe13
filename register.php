@@ -22,7 +22,11 @@ if(isset($_GET['register'])){
   $password = $_POST['password'];
   $passwordhash = password_hash($password, PASSWORD_DEFAULT);
   $statement = mysqli_query($link, "INSERT INTO user (firstname, name, mail, password) VALUES ('$firstname', '$name', '$mail', '$passwordhash')");
-  echo("erfolgreich!");
+  echo("erfolgreich!  ");
+  $mail_recipient=$mail;
+  $mail_subject="Ihre Registrierung";
+  $mail_message="Vielen Dank fuer Ihre Registrierung. Ihre Daten wurden erfolgreich gespeichert.";
+  include 'sendmail.php';
 }
 ?>
 <form action="?register=1" method="post">
