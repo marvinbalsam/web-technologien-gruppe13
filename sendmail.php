@@ -32,7 +32,7 @@ try {
     $mail->Body    = $mail_message;
     
     $mail->send();
-    echo 'Message has been sent';
+    echo 'Wir haben Ihnen eine Mail gesendet. ';
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "Wir konnten Ihnen leider keine Mail senden. Folgender Fehler ist aufgetreten: {$mail->ErrorInfo}";
 }
