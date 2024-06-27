@@ -28,9 +28,23 @@ $result = mysqli_query($link, $sql1);
             <h1>Webshop</h1>
             <h2>Hier finden Sie unsere Produkte</h2>
 
-            <a class="btn btn-primary btn-lg" id="add_product" href="product_add.php">Produkt hinzufügen</a>
+            <?php if(!is_numeric($loggedInUser)){
 
-            <a class="btn btn-primary btn-lg" id="my_products" href="userProducts.php">Meine Produkte</a>
+echo  '<a class="btn btn-primary btn-lg disabled" disabled>Produkt hinzufügen</a>';
+
+echo  '<a class="btn btn-primary btn-lg disabled" ">Meine Produkte</a>';
+
+echo '<a class = "btn btn-primary btn-lg" id="login_to_add_product" href="login.php">Anmelden um eigene Produkte zu verwalten</a>';
+
+} else{
+    echo  '<a class="btn btn-primary btn-lg" id="add_product" href="product_add.php">Produkt hinzufügen</a>';
+
+    echo  '<a class="btn btn-primary btn-lg" id="my_products" href="userProducts.php">Meine Produkte</a>';
+}
+
+          
+            
+            ?>
             <br/>
             <br/>
 
