@@ -7,7 +7,7 @@ if(isset($_SESSION)){
 
     session_unset();
     session_destroy();
-    sleep(5);
+    sleep(1);
     header("Location: ./products.php");
 }
 

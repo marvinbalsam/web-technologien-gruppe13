@@ -11,19 +11,17 @@ require 'session.php';
   <a id="cart" class="active left" href="#cart">Warenkorb (<?php $cartItemsCount ?>)</a>
   <a href=#userId><?php if ($loggedInUser > 0) {
                     echo $loggedInUser;
-                  } else {
-                    echo "Bitte melden sie sich an";
-                  }
+                  } 
 
                   ?></a>
                  
-  <?php if(empty($loggedInUser)){
-                   echo '<a href="logout.php">Logout</a>';
-
+  <?php if(is_numeric($loggedInUser)){
+                  
+                  echo '<a href="logout.php">Logout</a>';
                   }else{
-
-                   echo '<a href="login.php">Login</a>';
-                   echo  '<a href="register.php">Registrierung</a>';
+                   
+                    echo '<a href="login.php">Login</a>';
+                  echo  '<a href="register.php">Registrierung</a>';
                   } ?>
 
  
