@@ -8,11 +8,12 @@ include 'dbconnect.php';
     <title>Registrierung - Webshop</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    
 </head>
 <body>
 
 <h1>Webshop</h1>
-<h2>Bitte registrieren Sie sich mit Ihren persönlichen Daten.</h2>
+<h2 class="zentriert">Bitte registrieren Sie sich mit Ihren persönlichen Daten.</h2>
 <?php
 if(isset($_GET['register'])){
   $error = false;
@@ -29,7 +30,7 @@ if(isset($_GET['register'])){
   include 'sendmail.php';
 }
 ?>
-<form action="?register=1" method="post">
+<form action="?register=1" method="post" class="zentriert">
 
   <label for="firstname">Vorname:</label><br>
   <input type="text" id="firstname" name="firstname"><br>

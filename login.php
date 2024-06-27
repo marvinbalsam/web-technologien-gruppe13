@@ -15,7 +15,7 @@ require 'session.php';
 <h1>Webshop</h1>
 
 <div>
-        <form action="loginsubmit.php" onsubmit = "return validation()" method = "POST">
+        <form action="loginsubmit.php" onsubmit = "return validation()" method = "POST" class="zentriert">
             <div>
             <label>Mail</label><br>
             <input type="text" name="mail" required="mail" />

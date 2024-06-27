@@ -1,19 +1,19 @@
 body {
-    background-color: lightgray;
-  }
-  
-  h1 {
-    color: black;
+  background-color: lightgray;
+}
+
+h1 {
+  color: black;
     text-align: center;
   }
 
-  h2 {
+h2 {
     color :black;
     text-align: left;
     font-size: 20px;
   }
   
-  p {
+p {
     font-family: verdana;
     font-size: 20px;
     text-align: center;
@@ -24,7 +24,7 @@ body {
     overflow: hidden;
   }
   
-  .topnav a {
+.topnav a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -33,18 +33,19 @@ body {
     font-size: 17px;
   }
   
-  .topnav a:hover {
+.topnav a:hover {
     background-color: #ddd;
     color: black;
   }
 
-  #cart {
+#cart {
     float: right;
   }
 
-  .zentriert {
+.zentriert {
     width: 50%;
     margin: 0 auto; 
     background-color: lightgray; 
     padding: 20px;
+    border-radius: 40px;
   }
