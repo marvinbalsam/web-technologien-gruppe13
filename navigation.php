@@ -8,7 +8,7 @@ require 'session.php';
   <a href="video.php">Produkttests</a>
   <a href="contact.php">Kontakt</a>
 
-  <a id="cart" class="active left" href="#cart">Warenkorb (<?php $cartItemsCount ?>)</a>
+  <a id="cart" class="active left" href="cart.php">Warenkorb (<?php echo $_SESSION['cartItemsTotal'] ?>)</a>
   <a class="active left" href=#userId><?php echo $loggedInUser?></a>
                  
   <?php if(is_numeric($loggedInUser)){

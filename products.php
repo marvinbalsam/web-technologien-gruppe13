@@ -6,9 +6,10 @@ require 'session.php';
 $sql1 = "SELECT product_id, name, description, price, image FROM products";
 $result = mysqli_query($link, $sql1);
 
-//$sql2 = "SELECT COUNT(product_id) FROM cart WHERE user_id = $loggedInUser";
-//$cartResult = mysqli_query($link, $sql2);
-//$cartItemsCount = mysqli_fetch_column($cartResult);
+$cartResult = mysqli_query($link, "SELECT COUNT(*) AS total FROM cart WHERE user_id = $loggedInUser");
+$data = mysqli_fetch_assoc($cartResult);
+$_SESSION['cartItemsTotal'] = $data['total'];
+
 
 
 ?>
@@ -53,16 +54,22 @@ echo '<a class = "btn btn-primary btn-lg" id="login_to_add_product" href="login.
             <div>
     </header>
     <section class="container" id="products">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                 <div class="col">
                     <?php include 'card.php' ?>
                     <div class="card-footer">
-                        <a href="" class="btn btn-success">In den Warenkorb</a>
+                        <a href="?addToCart=<?=$row['product_id']?>" class="btn btn-success">In den Warenkorb</a>
 
                     </div>
                 </div>
             <?php endwhile; ?>
+            <?php if(isset($_GET['addToCart'])){
+                $product_id = $_GET['addToCart'];
+
+                   mysqli_query($link,"INSERT into cart(user_id, product_id, amount) VALUES ($loggedInUser, $product_id, 1)");
+                
+                }?>
         </div>
         </div>
 
