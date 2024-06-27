@@ -12,21 +12,15 @@ require 'session.php';
 </head>
 <body>
 
-<h1>Webshop</h1>
-
-<div>
-        <form action="loginsubmit.php" onsubmit = "return validation()" method = "POST" class="zentriert">
-            <div>
+<br><br>
+<div class="login-container">
+        <form action="loginsubmit.php" onsubmit = "return validation()" method = "POST" class="login-form">
+            <h2>Login</h2>
             <label>Mail</label><br>
             <input type="text" name="mail" required="mail" />
-                
-            </div>
-            <div>
             <label>Password</label><br>
             <input type="password" name="password" required="password" /><br><br>
-            </div>
-            <div>
-                <input type =  "submit" id = "button" value = "Login" />
+            <input type =  "submit" id = "button" value = "Login" />
         </form>
     </div>
 

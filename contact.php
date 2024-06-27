@@ -13,8 +13,8 @@ include 'navigation.php';
 <header>
         <h1>Kontaktieren Sie uns</h1>
     </header>
-    <div class="container">
-        <form action="submit_form.php" method="post">
+    <div class="login-container">
+        <form action="submit_form.php" method="post" class="login-form">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required>
             <br>
