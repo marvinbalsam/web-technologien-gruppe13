@@ -5,8 +5,13 @@ require 'session.php';
 
 
 
-$sql = "SELECT product_id, name, description, price, image FROM products WHERE user_id = $loggedInUser";
+$cartResult = mysqli_query($link, "SELECT * FROM cart WHERE user_id =$loggedInUser");
+$cartProducts= mysqli_fetch_assoc($cartResult);
+$product_id= $cartProducts['product_id'];
+
+$sql = "SELECT product_id, name, description, price, image FROM products";
 $result = mysqli_query($link, $sql);
+
 
 
 ?>
@@ -22,7 +27,7 @@ $result = mysqli_query($link, $sql);
 
 <body>
 
-    <h1>Meine Produkte:</h1>
+    <h1>Mein Warenkorb:</h1>
 
     <div>
         </header>
@@ -33,10 +38,11 @@ $result = mysqli_query($link, $sql);
                     <div class="col">
                         <?php 
                         include 'card.php';
+                        echo 'Menge:'. 0;
                         ?>
                         
-                        <a class="btn btn-success" id="change_product" href="product_change.php?product_id=<?= $row['product_id']?>">Bearbeiten</a>
-                        <a class="btn btn-success" id="delete_product" href="product_delete.php?product_id=<?= $row['product_id']?>">Löschen </a>
+                        <a class="btn btn-success" id="delete_product" href="">Aus dem Warenkorb entfernen</a>
+
                     </div>
                 <?php endwhile; ?>
             </div>

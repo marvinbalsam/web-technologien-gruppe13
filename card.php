@@ -1,13 +1,14 @@
-
 <div class="card">
 
-    <img src="<?php echo $row['image'];?>" class="card-img-top" alt="..." width="90" height="160">
-    <div class="card-title"><?= $row['name']?></div>
+    <?php
+    echo '<image src= "data:image/jpeg;base64, ' . $row['image'] . ' " "class="card-img-top" alt="..." width="240" height="240"  >';
+    ?>
+
+    <div class="card-title"><?= $row['name'] ?></div>
     <div class="card-body">
-        <?= $row['description']?>
+        <?= $row['description'] ?>
         <hr>
-        <?= $row['price']?>
+        <?= $row['price'] ?>
     </div>
 
 </div>
-
