@@ -15,7 +15,7 @@ include 'dbconnect.php';
 
 <h1>Webshop</h1>
 <h2 class="zentriert">Bitte registrieren Sie sich mit Ihren persönlichen Daten.</h2>
-<di?php
+<?php
 if(isset($_GET['register'])){
   $error = false;
   $firstname = $_POST['firstname'];
