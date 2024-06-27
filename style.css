@@ -6,6 +6,12 @@ body {
     color: black;
     text-align: center;
   }
+
+  h2 {
+    color :black;
+    text-align: left;
+    font-size: 20px;
+  }
   
   p {
     font-family: verdana;

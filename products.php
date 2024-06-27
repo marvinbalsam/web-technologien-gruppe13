@@ -23,30 +23,36 @@ $result = mysqli_query($link, $sql1);
 </head>
 
 <body>
-<header class ="jumbotron">
-    <div class ="container">
-    <h1>Webshop</h1>
-    <h2>Hier finden Sie unsere Produkte</h2>
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Webshop</h1>
+            <h2>Hier finden Sie unsere Produkte</h2>
 
-    <a class="btn btn-primary btn-lg" id="add_product" href="product_add.php">Produkt hinzufügen</a>
+            <a class="btn btn-primary btn-lg" id="add_product" href="product_add.php">Produkt hinzufügen</a>
 
-    <a class="btn btn-primary btn-lg" id="my_products" href="userProducts.php">Meine Produkte</a>
+            <a class="btn btn-primary btn-lg" id="my_products" href="userProducts.php">Meine Produkte</a>
+            <br/>
+            <br/>
 
-   
 
-    <div>
-        </header>
-        <section class="container" id="products">
-            <div class="row">
-                <?php while($row = mysqli_fetch_assoc($result)):?> 
+
+            <div>
+    </header>
+    <section class="container" id="products">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                 <div class="col">
-                  <?php include 'card.php'?>
-                </div>
-                <?php endwhile;?>
-            </div>
-    </div>
+                    <?php include 'card.php' ?>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-success">In den Warenkorb</a>
 
-    </div>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+        </div>
+
+        </div>
     </section>
     </div>
 

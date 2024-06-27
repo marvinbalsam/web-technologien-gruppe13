@@ -23,8 +23,8 @@ require 'session.php';
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
-        $image = $_POST['image'];
-        $statement = mysqli_query($link, "INSERT INTO products (name, description, price, image) VALUES ('$name', '$description', '$price', '$image') ");
+        $userId = $loggedInUser;
+        $statement = mysqli_query($link, "INSERT INTO products (name, description, price, user_id) VALUES ('$name', '$description', '$price', '$userId') ");
         echo("Produkt erfolgreich hinzugefügt");
     }
     ?>
@@ -37,8 +37,7 @@ require 'session.php';
 <input type="text" id="description" name="description"><br>
 <label for= "name">Preis</label><br>
 <input type="text" id="price" name="price"><br>
-<label for= "name">Bild hochladen</label><br>
-<input type="text" id="image" name="image"><br>
+<h2>Ein Bild kann später hinzugefügt werden.</h2>
 <input type="submit" value="Hinzufügen">
 
 </form>
