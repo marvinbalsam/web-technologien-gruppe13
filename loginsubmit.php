@@ -3,7 +3,6 @@ include 'navigation.php';
 include 'dbconnect.php';
 $mail = $_POST['mail'];
 $password = $_POST['password'];
-$password = password_hash($password, PASSWORD_DEFAULT);
       
         $mail = stripcslashes($mail);  
         $password = stripcslashes($password);  
@@ -39,7 +38,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 <body>
 
 <h1>Webshop</h1>
-<p>Sie werden automatisch in Kürze weitergeleitet. Falls Sie nicht weitergeleitet werden klicken Sie bitte <a href="./index.php">hier</a>
+
 
 
 </body>

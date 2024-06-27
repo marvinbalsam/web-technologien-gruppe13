@@ -20,8 +20,8 @@ if(isset($_GET['register'])){
   $name = $_POST['name'];
   $mail = $_POST['mail'];
   $password = $_POST['password'];
-  $passwordhash = password_hash($password, PASSWORD_DEFAULT);
-  $statement = mysqli_query($link, "INSERT INTO user (firstname, name, mail, password) VALUES ('$firstname', '$name', '$mail', '$passwordhash')");
+  // $passwordhash = password_hash($password, PASSWORD_DEFAULT);
+  $statement = mysqli_query($link, "INSERT INTO user (firstname, name, mail, password) VALUES ('$firstname', '$name', '$mail', '$password')");
   echo("erfolgreich!  ");
   $mail_recipient=$mail;
   $mail_subject="Ihre Registrierung";

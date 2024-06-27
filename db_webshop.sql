@@ -25,11 +25,8 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `user_id` int(10) unsigned NOT NULL DEFAULT 0,
   `product_id` int(10) unsigned DEFAULT NULL,
   `amount` int(10) unsigned DEFAULT 0,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `unique` (`product_id`,`user_id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `FK_cart_products` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Exportiere Daten aus Tabelle db_webshop.cart: ~0 rows (ungefähr)
 
