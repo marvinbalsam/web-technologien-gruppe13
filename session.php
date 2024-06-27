@@ -10,7 +10,7 @@ if(isset($_SESSION['username'])){
     $loggedInUser = $_SESSION['username'];
 
 }else{
-    $loggedInUser = "Öffentlicher Benutzer";
+    $loggedInUser = 0;
 }
 
 
