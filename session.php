@@ -13,6 +13,7 @@ if(isset($_SESSION['username'])){
     $loggedInUser = 0;
 }
 
+
 $cartItemsTotal = 0;
 $cartItemsTotal = $_SESSION['cartItemsTotal'];
 

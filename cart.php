@@ -3,7 +3,12 @@ include 'navigation.php';
 include 'dbconnect.php';
 require 'session.php';
 
-
+if($loggedInUser == 0){
+    
+    echo "Melden sie sich bitte an um den Warenkorb zu sehen";
+    exit;
+    
+}
 
 $cartResult = mysqli_query($link, "SELECT * FROM cart WHERE user_id =$loggedInUser");
 $cartProducts= mysqli_fetch_assoc($cartResult);
@@ -26,6 +31,8 @@ $result = mysqli_query($link, $sql);
 </head>
 
 <body>
+
+
 
     <h1>Mein Warenkorb:</h1>
 
