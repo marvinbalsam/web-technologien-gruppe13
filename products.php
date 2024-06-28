@@ -29,7 +29,7 @@ $_SESSION['cartItemsTotal'] = $data['total'];
             <h1>Webshop</h1>
             <h2>Hier finden Sie unsere Produkte</h2>
 
-            <?php if(!is_numeric($loggedInUser)){
+            <?php if($loggedInUser == 0){
 
 echo  '<a class="btn btn-primary btn-lg disabled" disabled>Produkt hinzufügen</a>';
 
