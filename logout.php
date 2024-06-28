@@ -8,7 +8,7 @@ if(isset($_SESSION)){
     session_unset();
     session_destroy();
     sleep(1);
-    header("Location: ./products.php");
+    header("Location: ./index.php");
 }
 
 ?>
