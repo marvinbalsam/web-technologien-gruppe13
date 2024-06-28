@@ -19,45 +19,45 @@ require 'session.php';
 
     <?php
     if (isset($_GET['product_add'])) {
-        if(getimagesize($_FILES['imageToUpload']['tmp_name']) == false){
+        if (getimagesize($_FILES['imageToUpload']['tmp_name']) == false) {
 
             echo "Bitte ein Bild auswählen";
-        }else{
-          
-        $error = false;
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
-        
-        $imageName = $_FILES['imageToUpload']['tmp_name'];
-        $image = base64_encode(file_get_contents(addslashes($imageName)));
+        } else {
 
-       // $target_dir = "images/";
-       //  $target_file = $target_dir.basename($_FILES["imageToUpload"]["name"]);
-       // move_uploaded_file($_FILES["imageToUpload"]['tmp_name'], $target_file);
-        
+            $error = false;
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $price = $_POST['price'];
 
-      
-        $userId = $loggedInUser;
-        $statement = mysqli_query($link, "INSERT INTO products (name, description, price, user_id, image) VALUES ('$name', '$description', '$price', '$userId', '$image') ");
-        echo("Produkt erfolgreich hinzugefügt");
-    }
+            $imageName = $_FILES['imageToUpload']['tmp_name'];
+            $image = base64_encode(file_get_contents(addslashes($imageName)));
+
+            // $target_dir = "images/";
+            //  $target_file = $target_dir.basename($_FILES["imageToUpload"]["name"]);
+            // move_uploaded_file($_FILES["imageToUpload"]['tmp_name'], $target_file);
+    
+
+
+            $userId = $loggedInUser;
+            $statement = mysqli_query($link, "INSERT INTO products (name, description, price, user_id, image) VALUES ('$name', '$description', '$price', '$userId', '$image') ");
+            echo ("Produkt erfolgreich hinzugefügt");
+        }
     }
     ?>
 
-<form action = "?product_add=1" method="post" enctype="multipart/form-data">
+    <form action="?product_add=1" method="post" enctype="multipart/form-data">
 
-<label for= "name">Produktname</label><br>
-<input type="text" id="name" name="name"><br>
-<label for= "description">Beschreibung</label><br>
-<input type="text" id="description" name="description"><br>
-<label for= "price">Preis</label><br>
-<input type="text" id="price" name="price"><br>
-<label for= "imageToUpload" >Bild auswählen</label><br> 
-<input type="file" id="imageToUpload" name="imageToUpload"><br>
-<input type="submit" value="Hinzufügen">
+        <label for="name">Produktname</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="description">Beschreibung</label><br>
+        <input type="text" id="description" name="description"><br>
+        <label for="price">Preis</label><br>
+        <input type="text" id="price" name="price"><br>
+        <label for="imageToUpload">Bild auswählen</label><br>
+        <input type="file" id="imageToUpload" name="imageToUpload"><br>
+        <input type="submit" value="Hinzufügen">
 
-</form>
+    </form>
 
 
 </body>

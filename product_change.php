@@ -3,7 +3,7 @@ include 'navigation.php';
 include 'dbconnect.php';
 require 'session.php';
 
-if(isset($_REQUEST['product_id'])){
+if (isset($_REQUEST['product_id'])) {
 
     $product_id = $_REQUEST['product_id'];
 
@@ -49,21 +49,21 @@ $product_price = $product['price'];
         sleep(1);
         header("Location: ./userProducts.php");
     }
-    ?> 
+    ?>
 
-<form action = "?product_change=1" method="post">
+    <form action="?product_change=1" method="post">
 
-<label for= "name">Produktname</label><br>
-<input type="text" id="name" name="name" value="<?= $product_name?>"><br>
-<label for= "description">Beschreibung</label><br>
-<input type="text" id="description" name="description"value="<?= $product_description?>"><br>
-<label for= "price">Preis</label><br>
-<input type="text" id="price" name="price"value="<?= $product_price?>"><br>
-<input type="submit" value="Ändern">
+        <label for="name">Produktname</label><br>
+        <input type="text" id="name" name="name" value="<?= $product_name ?>"><br>
+        <label for="description">Beschreibung</label><br>
+        <input type="text" id="description" name="description" value="<?= $product_description ?>"><br>
+        <label for="price">Preis</label><br>
+        <input type="text" id="price" name="price" value="<?= $product_price ?>"><br>
+        <input type="submit" value="Ändern">
 
-</form>
+    </form>
 
-<a class="btn btn-success" id="dont_change_product" href="products.php" >Zurück zur Produktübersicht!</a>
+    <a class="btn btn-success" id="dont_change_product" href="products.php">Zurück zur Produktübersicht!</a>
 
 </body>
 

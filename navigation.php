@@ -9,19 +9,19 @@ require 'session.php';
   <a href="contact.php">Kontakt</a>
 
   <a id="cart" class="active left" href="cart.php">Warenkorb (<?= $cartItemsTotal ?>)</a>
-  
-  <a class="active left" href=#userId><?php echo $loggedInUser?></a>
-                 
-  <?php if($loggedInUser>0){
-                  
-                  echo '<a href="logout.php">Logout</a>';
 
-                  }else{
-                   
-                    echo '<a href="login.php">Login</a>';
-                  echo  '<a href="register.php">Registrierung</a>';
-                  } ?>
+  <a class="active left" href=#userId><?php echo $loggedInUser ?></a>
 
- 
+  <?php if ($loggedInUser > 0) {
+
+    echo '<a href="logout.php">Logout</a>';
+
+  } else {
+
+    echo '<a href="login.php">Login</a>';
+    echo '<a href="register.php">Registrierung</a>';
+  } ?>
+
+
 
 </div>

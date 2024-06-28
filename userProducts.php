@@ -28,15 +28,17 @@ $result = mysqli_query($link, $sql);
         </header>
         <section class="container" id="products">
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
 
                     <div class="col">
-                        <?php 
+                        <?php
                         include 'card.php';
                         ?>
-                        
-                        <a class="btn btn-success" id="change_product" href="product_change.php?product_id=<?= $row['product_id']?>">Bearbeiten</a>
-                        <a class="btn btn-success" id="delete_product" href="product_delete.php?product_id=<?= $row['product_id']?>">Löschen </a>
+
+                        <a class="btn btn-success" id="change_product"
+                            href="product_change.php?product_id=<?= $row['product_id'] ?>">Bearbeiten</a>
+                        <a class="btn btn-success" id="delete_product"
+                            href="product_delete.php?product_id=<?= $row['product_id'] ?>">Löschen </a>
                     </div>
                 <?php endwhile; ?>
             </div>

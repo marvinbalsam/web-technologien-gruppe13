@@ -29,25 +29,25 @@ $_SESSION['cartItemsTotal'] = $data['total'];
             <h1>Webshop</h1>
             <h2>Hier finden Sie unsere Produkte</h2>
 
-            <?php if($loggedInUser == 0){
+            <?php if ($loggedInUser == 0) {
 
-echo  '<a class="btn btn-primary btn-lg disabled" disabled>Produkt hinzufügen</a>';
+                echo '<a class="btn btn-primary btn-lg disabled" disabled>Produkt hinzufügen</a>';
 
-echo  '<a class="btn btn-primary btn-lg disabled" ">Meine Produkte</a>';
+                echo '<a class="btn btn-primary btn-lg disabled" ">Meine Produkte</a>';
 
-echo '<a class = "btn btn-primary btn-lg" id="login_to_add_product" href="login.php">Anmelden um eigene Produkte zu verwalten</a>';
+                echo '<a class = "btn btn-primary btn-lg" id="login_to_add_product" href="login.php">Anmelden um eigene Produkte zu verwalten</a>';
 
-} else{
-    echo  '<a class="btn btn-primary btn-lg" id="add_product" href="product_add.php">Produkt hinzufügen</a>';
+            } else {
+                echo '<a class="btn btn-primary btn-lg" id="add_product" href="product_add.php">Produkt hinzufügen</a>';
 
-    echo  '<a class="btn btn-primary btn-lg" id="my_products" href="userProducts.php">Meine Produkte</a>';
-}
+                echo '<a class="btn btn-primary btn-lg" id="my_products" href="userProducts.php">Meine Produkte</a>';
+            }
 
-          
-            
+
+
             ?>
-            <br/>
-            <br/>
+            <br />
+            <br />
 
 
 
@@ -55,21 +55,21 @@ echo '<a class = "btn btn-primary btn-lg" id="login_to_add_product" href="login.
     </header>
     <section class="container" id="products">
         <div class="row row-cols-1 row-cols-md-4 g-4">
-            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
                 <div class="col">
                     <?php include 'card.php' ?>
                     <div class="card-footer">
-                        <a href="?addToCart=<?=$row['product_id']?>" class="btn btn-success">In den Warenkorb</a>
+                        <a href="?addToCart=<?= $row['product_id'] ?>" class="btn btn-success">In den Warenkorb</a>
 
                     </div>
                 </div>
             <?php endwhile; ?>
-            <?php if(isset($_GET['addToCart'])){
+            <?php if (isset($_GET['addToCart'])) {
                 $product_id = $_GET['addToCart'];
 
-                   mysqli_query($link,"INSERT into cart(user_id, product_id, amount) VALUES ($loggedInUser, $product_id, 1)");
-                
-                }?>
+                mysqli_query($link, "INSERT into cart(user_id, product_id, amount) VALUES ($loggedInUser, $product_id, 1)");
+
+            } ?>
         </div>
         </div>
 

@@ -3,7 +3,7 @@ include 'navigation.php';
 require 'session.php';
 
 
-if(isset($_SESSION)){
+if (isset($_SESSION)) {
 
     session_unset();
     session_destroy();
@@ -12,4 +12,3 @@ if(isset($_SESSION)){
 }
 
 ?>
-

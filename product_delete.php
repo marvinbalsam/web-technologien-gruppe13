@@ -2,7 +2,7 @@
 include 'navigation.php';
 include 'dbconnect.php';
 require 'session.php';
-if(isset($_REQUEST['product_id'])){
+if (isset($_REQUEST['product_id'])) {
 
     $product_id = $_REQUEST['product_id'];
 
@@ -33,12 +33,12 @@ $product_id = $product['product_id'];
 
     <h1>Produkt ändern</h1>
 
-   <a class="btn btn-success" id="delete_product" >Löschen<?php 
-   mysqli_query($link, "DELETE FROM products WHERE product_id=$product_id");
-   sleep(1);
+    <a class="btn btn-success" id="delete_product">Löschen<?php
+    mysqli_query($link, "DELETE FROM products WHERE product_id=$product_id");
+    sleep(1);
     header("Location: ./userProducts.php");
-   ?></a>
- 
+    ?></a>
+
 
 </body>
 

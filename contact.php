@@ -1,6 +1,6 @@
 <?php
 include 'navigation.php';
-$mail_recipient="info@gabriel-haardt.de";
+$mail_recipient = "info@gabriel-haardt.de";
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,16 +13,16 @@ $mail_recipient="info@gabriel-haardt.de";
 <body>
 <?php
 
-if(isset($_GET['senden'])){
-  echo "Vielen Dank!";
-  $error = false;
-  $name = $_POST['name'];
-  $mail = $_POST['mail'];
-  $message = $_POST['message'];
-  $mail_recipient="info@gabriel-haardt.de";
-  $mail_subject="Neue Nachricht ueber Kontaktformular";
-  $mail_message= "von " . $name . " mit E-Mail: " . $mail . " Nachricht: ". $message;
-  include 'sendmail.php';
+if (isset($_GET['senden'])) {
+    echo "Vielen Dank!";
+    $error = false;
+    $name = $_POST['name'];
+    $mail = $_POST['mail'];
+    $message = $_POST['message'];
+    $mail_recipient = "info@gabriel-haardt.de";
+    $mail_subject = "Neue Nachricht ueber Kontaktformular";
+    $mail_message = "von " . $name . " mit E-Mail: " . $mail . " Nachricht: " . $message;
+    include 'sendmail.php';
 }
 ?>
 <header>

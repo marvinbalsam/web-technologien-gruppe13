@@ -3,16 +3,16 @@ include 'navigation.php';
 include 'dbconnect.php';
 require 'session.php';
 
-if($loggedInUser == 0){
-    
+if ($loggedInUser == 0) {
+
     echo "Melden sie sich bitte an um den Warenkorb zu sehen";
     exit;
-    
+
 }
 
 $cartResult = mysqli_query($link, "SELECT * FROM cart WHERE user_id =$loggedInUser");
-$cartProducts= mysqli_fetch_assoc($cartResult);
-$product_id= $cartProducts['product_id'];
+$cartProducts = mysqli_fetch_assoc($cartResult);
+$product_id = $cartProducts['product_id'];
 
 $sql = "SELECT product_id, name, description, price, image FROM products";
 $result = mysqli_query($link, $sql);
@@ -40,14 +40,14 @@ $result = mysqli_query($link, $sql);
         </header>
         <section class="container" id="products">
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
 
                     <div class="col">
-                        <?php 
+                        <?php
                         include 'card.php';
-                        echo 'Menge:'. 0;
+                        echo 'Menge:' . 0;
                         ?>
-                        
+
                         <a class="btn btn-success" id="delete_product" href="">Aus dem Warenkorb entfernen</a>
 
                     </div>
