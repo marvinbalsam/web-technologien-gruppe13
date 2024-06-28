@@ -8,10 +8,9 @@ include 'dbconnect.php';
     <title>Registrierung - Webshop</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     
 </head>
-<bo>
+<body>
 
 <h1>Webshop</h1>
 <h2 class="zentriert">Bitte registrieren Sie sich mit Ihren persönlichen Daten.</h2>
@@ -31,14 +30,14 @@ if(isset($_GET['register'])){
   include 'sendmail.php';
 }
 ?>
-<div class="login-container"
+<div class="login-container">
 <form action="?register=1" method="post" class="login-form">
 
   <label for="firstname">Vorname:</label><br>
   <input type="text" id="firstname" name="firstname"><br>
   <label for="name">Name:</label><br>
   <input type="text" id="name" name="name"><br>
-  <label for="mail">E-Mail:</label><br>
+  <label for="name">E-Mail:</label><br>
   <input type="email" id="mail" name="mail"><br>
   <label for="password">Passwort:</label><br>
   <input type="password" id="password" name="password"><br><br>
