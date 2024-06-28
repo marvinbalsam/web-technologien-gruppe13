@@ -21,7 +21,7 @@ if ($count == 1) {
     session_start();
     $_SESSION['username'] = $row['user_id'];
     echo "<h1><center> Login erfolgreich. Sie werden auf das Dashboard weitergeleitet</center></h1>";
-    sleep(5);
+    sleep(1);
     header("Location: ./products.php");
 } else {
     echo "<h1> Login fehlgeschlagen. Bitte versuchen Sie es erneut.</h1>";
@@ -40,8 +40,7 @@ if ($count == 1) {
 <body>
 
     <h1>Webshop</h1>
-    <p>Sie werden automatisch in Kürze weitergeleitet. Falls Sie nicht weitergeleitet werden klicken Sie bitte <a
-            href="./index.php">hier</a>
+
 
 
 </body>
